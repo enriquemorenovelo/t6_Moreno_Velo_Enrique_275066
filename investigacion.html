@@ -9,39 +9,119 @@
     <table style="width:100%">
       <tr>
         <td>
-          <img src="escudo_uach.jpg" height="200px" title="Universidad Autónoma de Chihuahua" />
+          <img align="left" src="escudo_uach.jpg" height="200px" title="Universidad Autónoma de Chihuahua" />
         </td>
         <td>
           <p style="text-align:center; font-size:xx-large">UNIVERSIDAD AUTÓNOMA DE<br>CHIHUAHUA</p>
           <p style="text-align:center; font-size:x-large; font-family:sans-serif">Facultad de Ingenieria</p>
         </td>
         <td>
-          <img src="escudo_ingenieria.png" height="200px" title="Facultad de Ingenieria" />
+          <img align="right" src="escudo_ingenieria.png" height="200px" title="Facultad de Ingenieria" />
         </td>
       </tr>
     </table>
 
-    <div style="text-align:center; padding:20px">
+    <div style="text-align:center; padding:10px">
       <img src="nosql.png" height="200px"/>
-      <h1>NoSQL</h1>
-      <p>Profesor - Andrei Helo Guereca</p>
-      <p>Alumno - Enrique Moreno Velo</p>
-      <p>Matricula - 275066</p>
-      <p>Fecha de entrega - 6 de Septiembre del 2015</p>
+      <h1>"NoSQL"</h1>
+      <p><b>Profesor </b> - Andrei Helo Guereca</p>
+      <p><b>Alumno</b> - Enrique Moreno Velo</p>
+      <p><b>Matricula</b> - 275066</p>
+      <p><b>Fecha de entrega</b> - 6 de Septiembre del 2015</p>
       <hr>
     </div>
 
-    <h2>Índice</h2>
-    <ol style="list-style-type:disc">
-      <li>Introducción</li>
-      <li>Contenido</li>
+    <h2 id="ind">Índice</h2>
+    <ol style="list-style-type:disc; font-size:large">
+      <li><a href="#intro">Introducción</a></li>
+      <li><a href="#nosql">Bases de Datos NoSQL</a></li>
+      <li><a href="#t1">Antecedentes</a></li>
+      <li><a href="#t2">Arquitectura</a></li>
+      <li><a href="#t3">Ventajas</a></li>
+      <li><a href="#t4">Desventajas</a></li>
+      <li><a href="#t5">Sistemas</a></li>
       <ol style="list-style-type:circle">
         <li>Antecedentes</li>
         <li>Arquitectura</li>
       </ol>
-      <li>Conclusión</li>
-      <li>Referencias</li>
+      <li><a href="#con">Conclución</a></li>
+      <li><a href="#ref">Referencias</a></li>
     </ol>
+    <br>
+    <br>
+    <br>
+
+
+    <h2 id="intro">Introducción</h2>
+    <p style="text-align:justify">
+      Este documento HTML contiene una investigacion acerca de las Bases de Datos no Relacionales.
+      Se narra una breve historia de como surgio el termino y su paso a traves de los años, se explica el funcionamiento de la base de datos,
+      donde <abbr title="Structured Query Language">SQL</abbr> no es su principal lenguaje  de consulta.
+    </p>
+    <p style="text-align:justify">
+      Al conocer su funcionamiento podremos comparar y conocer las ventajas y desventajas al utilizar dicho sistema en su gestion de datos.
+      Se nombraran algunos sistemas importantes que implementan NoSQL.
+    </p>
+    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <br>
+
+
+    <h2 id="nosql">Bases de Datos NoSQL</h2>
+    <p style="text-align:justify">
+      <img src="tipos-nosql.gif" title="NoSQL" style="float:right" height="200px">
+      <abbr title="Not Only SQL">noSQL</abbr> (a veces llamado <em>"no sólo SQL"</em>) es una amplia clase de sistemas de gestión de bases de datos que difieren del modelo
+      clásico del sistema de gestión de bases de datos relacionales (RDBMS) en aspectos importantes, el más destacado es que no usan SQL
+      como el principal lenguaje de consultas. Los datos almacenados no requieren estructuras fijas como tablas, normalmente no soportan operaciones
+      JOIN, ni garantizan completamente ACID (atomicidad, consistencia, aislamiento y durabilidad), y habitualmente escalan bien horizontalmente.
+      Los sistemas NoSQL se denominan a veces "no sólo SQL" para subrayar el hecho de que también pueden soportar lenguajes de consulta de tipo SQL.
+    </p>
+    <p style="text-align:justify" >
+      Por lo general, los investigadores académicos se refieren a este tipo de bases de datos como almacenamiento estructurado, término que abarca
+      también las bases de datos relacionales clásicas. A menudo, las bases de datos NoSQL se clasifican según su forma de almacenar los datos,
+      y comprenden categorías como clave-valor, las implementaciones de BigTable, bases de datos documentales, y Bases de datos orientadas a grafos.
+    </p>
+    <p style="text-align:justify">
+      Se puede decir que la aparición del término NoSQL aparece con la llegada de la web 2.0 ya que hasta ese momento  sólo  subían  contenido  a
+      la  red  aquellas  empresas  que  tenían  un  portal,  pero  con  la  llegada  de aplicaciones  como Facebook,  Twitter  o  Youtube,
+      cualquier  usuario  podía  subir  contenido,  provocando  así un crecimiento exponencial de los datos.
+    </p>
+    <p style="text-align:justify">
+      Es  en  este  momento  cuando  empiezan  a  aparecer  los  primeros  problemas  de  la  gestión  de  toda  esa información almacenada
+      en bases  de  datos relacionales. En un principio, para solucionar estos problemas de  accesibilidad,  las  empresas  optaron  por  utilizar
+      un  mayor  número  de  máquinas  pero  pronto  se  dieron cuenta de que esto no solucionaba el problema, además de ser una solución muy cara.
+      La otra solución era la  creación  de  sistemas  pensados  para  un  uso  específico  que  con  el  paso  del  tiempo  han  dado  lugar  a
+      soluciones robustas, apareciendo así el movimiento NoSQL.
+    </p>
+    <p style="text-align:justify">
+      Por  lo  tanto  hablar  de  bases  de  datos  NoSQL  es  hablar  de  estructuras  que  nos  permiten  almacenar
+      información  en  aquellas  situaciones  en  las  que  las  bases  de  datos  relacionales generan  ciertos  problemas
+      debido  principalmente  a  problemas  de  escalabilidad  y  rendimiento  de  las  bases  de  datos  relacionales
+      donde se dan cita miles de usuarios concurrentes y con millones de consultas diarias.
+    </p>
+    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <br>
+
+
+    <h2 id="t1">Antecedentes</h2>
+    <p style="text-align:justify">
+      Carlo Strozzi usó el término <strong>NoSQL</strong> en 1998 para referirse a su base de datos. Era una base de datos open-source,
+      ligera, que no ofrecía un interface SQL, pero sí seguía el modelo relacional1 (Strozzi sugiere que,
+      ya que el actual movimiento NoSQL <i>"Se sale completamente del modelo relacional, debería, por tanto, haberse llamado 'NoREL', o algo así."</i>)
+    </p>
+    <p style="text-align:justify">
+      Eric Evans, un empleado de Rackspace, reintrodujo el término NoSQL cuando Johan Oskarsson de Last.fm quiso organizar un evento para discutir
+      bases de datos distribuidas de código abierto. El nombre intentaba recoger el número creciente de bases de datos
+      no relacionales y distribuidas que no garantizaban ACID, atributo clave en las RDBMS clásicas.
+    </p>
+    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <br>
+
+    <h2 id="t2">Arquitectura</h2>
+    <h2 id="t3">Ventajas</h2>
+    <h2 id="t4">Desventajas</h2>
+    <h2 id="t5">Sistemas</h2>
+
+
 
 
 
