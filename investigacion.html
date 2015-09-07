@@ -39,12 +39,15 @@
       <li><a href="#t2">Arquitectura</a></li>
       <li><a href="#t3">Ventajas</a></li>
       <li><a href="#t4">Desventajas</a></li>
-      <li><a href="#t5">Sistemas</a></li>
+      <li><a href="#t5">Diferencias con bases de datos SQL</a></li>
+      <li><a href="#t6">Sistemas</a></li>
       <ol style="list-style-type:circle">
-        <li>Antecedentes</li>
-        <li>Arquitectura</li>
+        <li><a href="#t6s1">Bases de datos clave-valor</a></li>
+        <li><a href="#t6s2">Bases de datos documentales</a></li>
+        <li><a href="#t6s3">Bases de datos en Grafo</a></li>
+        <li><a href="#t6s4">Bases de datos Orientados a Objetos</a></li>
       </ol>
-      <li><a href="#con">Conclución</a></li>
+      <li><a href="#con">Conclusión</a></li>
       <li><a href="#ref">Referencias</a></li>
     </ol>
     <br>
@@ -61,6 +64,9 @@
     <p style="text-align:justify">
       Al conocer su funcionamiento podremos comparar y conocer las ventajas y desventajas al utilizar dicho sistema en su gestion de datos.
       Se nombraran algunos sistemas importantes que implementan NoSQL.
+    </p>
+    <p style="text-align:justify">
+      Ademas en este mismo documento debemos aplicar todos los conceptos aprendidos de HTML vistos hasta hoy en el aula de clase
     </p>
     <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
     <br>
@@ -104,9 +110,13 @@
 
     <h2 id="t1">Antecedentes</h2>
     <p style="text-align:justify">
+      El termino NOSQL cobija varios productos, varios conceptos relacionados sobre almacenamiento,  gestión de datos y datos voluminosos.
+      Es lo que denominan un término “umbrella” (“sombrilla”) porque cobija varias elementos.
+    </p>
+    <p style="text-align:justify">
       Carlo Strozzi usó el término <strong>NoSQL</strong> en 1998 para referirse a su base de datos. Era una base de datos open-source,
       ligera, que no ofrecía un interface SQL, pero sí seguía el modelo relacional1 (Strozzi sugiere que,
-      ya que el actual movimiento NoSQL <i>"Se sale completamente del modelo relacional, debería, por tanto, haberse llamado 'NoREL', o algo así."</i>)
+      ya que el actual movimiento NoSQL  <cite><q>Se sale completamente del modelo relacional, debería, por tanto, haberse llamado 'NoREL', o algo así.</q></cite>)
     </p>
     <p style="text-align:justify">
       Eric Evans, un empleado de Rackspace, reintrodujo el término NoSQL cuando Johan Oskarsson de Last.fm quiso organizar un evento para discutir
@@ -117,14 +127,179 @@
     <br>
 
     <h2 id="t2">Arquitectura</h2>
+    <div style="text-align:justify">
+      <p>
+        Típicamente las bases de datos relacionales modernas han mostrado poca eficiencia en determinadas aplicaciones que usan los datos de forma
+        intensiva, incluyendo el indexado de un gran número de documentos, la presentación de páginas en sitios que tienen gran tráfico,
+        y en sitios de streaming audiovisual. Las implementaciones típicas de RDBMS se han afinado o bien para una cantidad pequeña pero frecuente
+        de lecturas y escrituras o para un gran conjunto de transacciones que tiene pocos accesos de escritura. Por otro lado NoSQL puede servir
+        gran cantidad de carga de lecturas y escrituras.
+      </p>
+      <p>
+        Implementaciones de NoSQL usadas en el mundo real incluyen los 3TB de los marcadores verdes de Digg (indicados para señalar las historias
+        votadas por otros en la red social; aunque duró menos de 3 meses y fue abandonado); los 6 TB de la base de datos del “ENSEMBLE”
+        de la Comisión Europea usado en los modelos de comparación y calidad del aire, y los 50 TB de la búsqueda de la bandeja de
+        entrada de Facebook.
+      </p>
+      <p>
+        Las arquitecturas NoSQL frecuentemente aportan escasas garantías de consistencia, tales como consistencia de eventos o transaccional
+        restringida a ítems únicos de datos. Algunos sistemas, sin embargo, aportan todas las garantías de los sistemas ACID en algunas
+        instancias añadiendo una capa intermedia (como por ejemplo, AppScale o CloudTPS). Hay dos sistemas que han sido desplegados y que aportan
+        aislamiento snapshot para almacenamientos de columna: El sistema Percolator de Google (basado en el sistema BigTable) y el sistema
+        transaccional de Hbase desarrollado por la universidad de Waterloo. Estos sistemas, desarrollados de forma independiente, usan conceptos
+        similares para conseguir transacciones ACID distribuidas de múltiples filas con garantías de aislamiento snapshot para el sistema
+        subyacente de almacenamiento en esa columna, sin sobrecarga extra en la gestión de los datos, despliegue en el sistema de middleware,
+        ni mantenimiento introducido por la capa de middleware.
+      </p>
+      <p>
+        Bastantes sistemas NoSQL emplean una arquitectura distribuida, manteniendo los datos de forma redundante en varios servidores, usando
+        frecuentemente una tabla hash distribuida. De esta forma, el sistema puede realmente escalar añadiendo más servidores,
+        y el fallo en un servidor puede ser tolerado.
+      </p>
+    </div>
+    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <br>
+
     <h2 id="t3">Ventajas</h2>
+    <ol style="list-style-type:disc; color:blue">
+      <li>Estos sistemas responden a las necesidades de escalabilidad horizontal que tienen cada vez más empresas.</li>
+      <li>Pueden manejar enormes cantidades de datos.</li>
+      <li>No generan cuellos de botella.</li>
+      <li>Escalamiento sencillo.</li>
+      <li>Diferentes DBs NoSQL para diferentes proyectos.</li>
+      <li>Se ejecutan en clusters de máquinas baratas.</li>
+    </ol>
+    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <br>
+
     <h2 id="t4">Desventajas</h2>
-    <h2 id="t5">Sistemas</h2>
+    <ol style="list-style-type:disc; color:red">
+      <li>El código abierto puede significar una "mancha" en el soporte para las empresas.</li>
+      <li>No están lo suficientemente maduros para algunas empresas</li>
+      <li>Limitaciones de Inteligencia de Negocios</li>
+      <li>La falta de experiencia</li>
+      <li>Problemas de compatibilidad</li>
 
+    </ol>
+    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <br>
 
+    <h2 id="t5">Diferencias con bases de datos SQL</h2>
+    <p>
+      Algunas  de  las  diferencias  más  destacables  que  nos  podemos  encontrar  entre  los  sistemas  NoSQL  y  los sistemas SQL están:
+      <ol>
+        <li><b>No utilizan SQL como lenguaje de consultas</b> La mayoría de las bases de datos NoSQL evitan utilizar este tipo de lenguaje o
+          lo utilizan como un lenguaje de apoyo. Por poner algunos ejemplos, Cassandra utiliza el lenguaje CQL, MongoDB utiliza JSON o BigTable
+          hace uso de GQL.
+        </li>
+        <li><b>No utilizan estructuras fijas como tablas para el almacenamiento de los datos.</b> Permiten hacer uso de otros tipos de modelos
+          de almacenamiento de información como sistemas de clave-valor, objetos o grafos</li>
+        <li><b>No suelen permitir operaciones <del>JOIN</del>.</b> Al disponer de un volumen de datos tan extremadamente grande suele resultar deseable
+          evitar los JOIN. Esto se debe a que, cuando la operación no es la búsqueda de una clave, la sobrecarga puede llegar a ser muy
+          costosa. Las soluciones más directas consisten en desnormalizar los datos, o bien realizar el JOIN mediante software, en la capa de
+          aplicación.
+        </li>
+          <li><b>Arquitectura distribuida.</b> Las bases de datos relacionales suelen estar centralizadas en una única máquina o bien en
+            una estructura máster-esclavo, sin embargo en los casos NoSQL la información puede estar compartida en varias máquinas mediante
+            mecanismos de tablas Hash distribuidas.
+          </li>
+      </ol>
+    </p>
+    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <br>
 
+    <h2 id="t6">Sistemas</h2>
+    <p style="text-align:justify">
+      Dependiendo  de  la  forma  en  la  que  almacenen  la  información,  nos  podemos  encontrar  varios  tipos distintos de bases de
+      datos NoSQL. Veamos los sistemas más utilizados.
+    </p>
+    <ol style="list-style-type:square">
+      <li>
+        <h3 id="t6s1">Bases de datos clave-valor</h3>
+        <p>
+          <img src="bd-clavevalor.png" title="NoSQL" style="float:right" height="200px">
+          Son  el  modelo  de  base  de  datos  NoSQL  más  popular,  además  de  ser  la  más  sencilla  en  cuanto  a
+          funcionalidad. En este tipo de sistema, cada elemento está identificado por una llave única, lo que permite
+          la recuperación de  la información de  forma muy rápida, información que  habitualmente  está almacenada
+          como un objeto binario (BLOB). Se caracterizan por ser muy eficientes tanto para las lecturas como para las
+          escrituras.<br><br>
+          Algunos ejemplos de este tipo son Cassandra, BigTable o HBase.
+        </p>
+        <br>
+      </li>
+      <li>
+        <h3 id="t6s2">Bases de datos documentales</h3>
+        <p>
+          <img src="bd-documentales.jpg" title="NoSQL" style="float:left" height="200px">
+          Este  tipo almacena la información como un documento, generalmente  utilizando para ello una estructura
+          simple como JSON o XML y donde se utiliza una clave única para cada registro. Este tipo de implementación
+          permite,  además  de  realizar  búsquedas  por  clave-valor,  realizar  consultas  más  avanzadas  sobre  el
+          contenido del documento. <br><br>
+          Son las bases de datos NoSQL más versátiles. Se pueden utilizar en gran cantidad de proyectos, incluyendo muchos
+          que tradicionalmente funcionarían sobre bases de datos relacionales.<br><br>
+          Algunos ejemplos de este tipo son MongoDB o CouchDB
 
+        </p>
+      </li>
+      <li>
+        <h3 id="t6s3">Bases de datos en Grafo</h3>
+        <p>
+          <img src="bd-grafo.png" title="NoSQL" style="float:right" height="200px">
+          En este tipo de bases de datos, la información se representa como nodos de un grafo y sus relaciones con
+          las aristas del mismo, de manera que se puede hacer uso de la teoría de grafos para recorrerla. Para sacar
+          el máximo rendimiento a este tipo de bases de datos, su estructura debe estar totalmente normalizada, de
+          forma que cada tabla tenga una sola columna y cada relación dos.<br><br>
+          Este  tipo  de  bases  de  datos  ofrece  una  navegación  más  eficiente  entre  relaciones  que  en  un  modelo relacional.<br><br>
+          Algunos ejemplos de este tipo son Neo4j, InfoGrid o Virtuoso
 
+        </p>
+      </li>
+      <li>
+        <h3 id="t6s4">Bases de datos Orientadas a Objetos</h3>
+        <p>
+          <img src="bd-oo.jpg" title="NoSQL" style="float:left" height="200px">
+          En una base de datos orientada a objetos, la información se representa mediante objetos como los presentes en la programación
+          orientada a objetos. Cuando se integra las características de una base de datos con las de un lenguaje de programación
+          orientado a objetos, el resultado es un sistema gestor de base de datos orientada a objetos (ODBMS, object database management
+          system). Un ODBMS hace que los objetos de la base de datos aparezcan como objetos de un lenguaje de programación en uno o
+          más lenguajes de programación a los que dé soporte. Un ODBMS extiende los lenguajes con datos persistentes de forma transparente,
+          control de concurrencia, recuperación de datos, consultas asociativas y otras capacidades.<br><br>
+          Las bases de datos orientadas a objetos se diseñan para trabajar bien en conjunción con lenguajes de programación orientados a
+          objetos como Java, C#, Visual Basic.NET y C++. Los ODBMS usan exactamente el mismo modelo que estos lenguajes de programación.<br><br>
+          Los ODBMS son una buena elección para aquellos sistemas que necesitan un buen rendimiento en la manipulación de
+          tipos de dato complejos.<br><br>
+          Algunos ejemplos de este tipo de bases de datos son Zope, Gemstone o Db4o
+        </p>
+      </li>
+    </ol>
+    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <br>
 
+    <h2 id="con">Conclusión</h2>
+    <p style="text-align:justify">
+      Al termino de esta investigacion el alumno puede comprender la historia, la estrucutura y diferencias que existen entre una base de datos relaciona y una <strong>NO</strong>
+      relacional, y tiene la capacidad de elegir el tipo de sistema a utilizar cuando maneje datos.
+      Ademas debe conocer si no es que todos, la mayoria de las estructuras, etiquetas, comandos, estilos, atributos y propiedades  de HTML que
+      se han visto a lo largo del curso.
+    </p>
+    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <br>
+
+    <h2 id="ref">Referencias</h2>
+    <p>
+      1.Wikipedia.  Fundación Wikimedia, Inc., <em>"NoSQL"</em> 29 de Junio del 2015 <a href="https://es.wikipedia.org/wiki/NoSQL">https://es.wikipedia.org/wiki/NoSQL</a>
+    </p>
+    <p>
+      2. William Díaz Sepúlveda.  Bases de datos NOSQL ,<em>"BASES DE DATOS NOSQL: LLEGARON PARA QUEDARSE"</em> 27 de Mayo del 2013 <a href="http://basesdedatosnosql.blogspot.mx">http://basesdedatosnosql.blogspot.mx</a>
+    </p>
+    <p>
+      3.Hugo González. Academia de Tecnologías de la Información y Telemática, <em>"Bases de datos NoSQL"</em> 17 de Noviembre del 2011<a href="http://atit.upslp.edu.mx/~hugo/presentaciones/2011--noSQL--SemanaUPSLP.pdf">http://atit.upslp.edu.mx/~hugo/presentaciones/2011--noSQL--SemanaUPSLP.pdf</a>
+    </p>
+    <p>
+      4.LinuxParty.  LinuxParty Team, <em>"5 Pros y 5 contras de cinco bases de datos NoSQL "</em> 109 de Enero del 2011 <a href="http://www.linux-party.com/index.php/89-basesdedatos/6599-5-pros-y-5-contras-de-cinco-bases-de-datos-nosql-">http://www.linux-party.com/index.php/89-basesdedatos/6599-5-pros-y-5-contras-de-cinco-bases-de-datos-nosql-</a>
+    </p>
+    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <br>
+    <br>
   </body>
 </html>
