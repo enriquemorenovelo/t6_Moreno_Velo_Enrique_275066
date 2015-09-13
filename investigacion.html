@@ -3,36 +3,95 @@
   <head>
     <meta charset="utf-8">
     <title>NO SQL</title>
+    <style>
+
+    table, img#NSQL{
+      width: 100%;
+      text-align: center;
+      vertical-align: baseline;
+    }
+    p#uach{
+      font-size: xx-large;
+      text-align: center;
+      font-weight: bold;
+    }
+    p#fing{
+      font-size: xx-large;
+      font-family: arial;
+      text-align: center;
+    }
+    div#portada{
+      text-align: center;
+      padding:10px;
+    }
+
+    ol#ind{
+      list-style-type:disc;
+      font-size:large;
+    }
+    ol#subind{
+      list-style-type: circle;
+      font-size:large;
+    }
+    p{
+      text-align: justify;
+    }
+    p#vol-ind{
+      text-align: right;
+    }
+    ol#ventj{
+      list-style-type:disc;
+      color:blue;
+    }
+    ol#desventj{
+      list-style-type:disc;
+      color:red;
+    }
+    ol#difSQL{
+      text-align: justify;
+      list-style: square;
+    }
+    ol#sis{
+      list-style-type:square;
+    }
+    img#img1, img#img2, img#img4 {
+      float: right;
+    }
+    img#img3, img#img5{
+      float: left;
+    }
+
+    </style>
   </head>
   <body>
 
-    <table style="width:100%">
+    <table>
       <tr>
         <td>
-          <img align="left" src="escudo_uach.jpg" height="200px" title="Universidad Autónoma de Chihuahua" />
+          <img src="escudo_uach.jpg" height="200px" title="Universidad Autónoma de Chihuahua" />
         </td>
         <td>
-          <p style="text-align:center; font-size:xx-large">UNIVERSIDAD AUTÓNOMA DE<br>CHIHUAHUA</p>
-          <p style="text-align:center; font-size:x-large; font-family:sans-serif">Facultad de Ingenieria</p>
+          <p id="uach">UNIVERSIDAD AUTÓNOMA DE<br>CHIHUAHUA</p>
+          <p id="fing">Facultad de Ingenieria</p>
         </td>
         <td>
-          <img align="right" src="escudo_ingenieria.png" height="200px" title="Facultad de Ingenieria" />
+          <img src="escudo_ingenieria.png" height="200px" title="Facultad de Ingenieria" />
         </td>
       </tr>
     </table>
 
-    <div style="text-align:center; padding:10px">
-      <img src="nosql.png" height="200px"/>
+    <div id="portada">
+      <img id="imgNSQL" src="nosql.png" height="200px"/>
       <h1>"NoSQL"</h1>
-      <p><b>Profesor </b> - Andrei Helo Guereca</p>
-      <p><b>Alumno</b> - Enrique Moreno Velo</p>
-      <p><b>Matricula</b> - 275066</p>
-      <p><b>Fecha de entrega</b> - 6 de Septiembre del 2015</p>
+      <b>Profesor </b> - Andrei Helo Guereca <br> <br>
+      <b>Alumno</b> - Enrique Moreno Velo <br> <br>
+      <b>Matricula</b> - 275066 <br> <br>
+      <b>Fecha de entrega</b> - 6 de Septiembre del 2015 <br> <br>
       <hr>
     </div>
 
     <h2 id="ind">Índice</h2>
-    <ol style="list-style-type:disc; font-size:large">
+    <ol id="ind">
       <li><a href="#intro">Introducción</a></li>
       <li><a href="#nosql">Bases de Datos NoSQL</a></li>
       <li><a href="#t1">Antecedentes</a></li>
@@ -41,7 +100,7 @@
       <li><a href="#t4">Desventajas</a></li>
       <li><a href="#t5">Diferencias con bases de datos SQL</a></li>
       <li><a href="#t6">Sistemas</a></li>
-      <ol style="list-style-type:circle">
+      <ol id="subind">
         <li><a href="#t6s1">Bases de datos clave-valor</a></li>
         <li><a href="#t6s2">Bases de datos documentales</a></li>
         <li><a href="#t6s3">Bases de datos en Grafo</a></li>
@@ -56,112 +115,110 @@
 
 
     <h2 id="intro">Introducción</h2>
-    <p style="text-align:justify">
+    <p>
       Este documento HTML contiene una investigacion acerca de las Bases de Datos no Relacionales.
       Se narra una breve historia de como surgio el termino y su paso a traves de los años, se explica el funcionamiento de la base de datos,
       donde <abbr title="Structured Query Language">SQL</abbr> no es su principal lenguaje  de consulta.
     </p>
-    <p style="text-align:justify">
+    <p >
       Al conocer su funcionamiento podremos comparar y conocer las ventajas y desventajas al utilizar dicho sistema en su gestion de datos.
       Se nombraran algunos sistemas importantes que implementan NoSQL.
     </p>
-    <p style="text-align:justify">
+    <p >
       Ademas en este mismo documento debemos aplicar todos los conceptos aprendidos de HTML vistos hasta hoy en el aula de clase
     </p>
-    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <p id="vol-ind"><a href="#ind"><ins>Volver al Índice</ins></a></p>
     <br>
 
 
     <h2 id="nosql">Bases de Datos NoSQL</h2>
-    <p style="text-align:justify">
-      <img src="tipos-nosql.gif" title="NoSQL" style="float:right" height="200px">
+    <p>
+      <img id="img1" src="tipos-nosql.gif" title="NoSQL" height="200px">
       <abbr title="Not Only SQL">noSQL</abbr> (a veces llamado <em>"no sólo SQL"</em>) es una amplia clase de sistemas de gestión de bases de datos que difieren del modelo
       clásico del sistema de gestión de bases de datos relacionales (RDBMS) en aspectos importantes, el más destacado es que no usan SQL
       como el principal lenguaje de consultas. Los datos almacenados no requieren estructuras fijas como tablas, normalmente no soportan operaciones
       JOIN, ni garantizan completamente ACID (atomicidad, consistencia, aislamiento y durabilidad), y habitualmente escalan bien horizontalmente.
       Los sistemas NoSQL se denominan a veces "no sólo SQL" para subrayar el hecho de que también pueden soportar lenguajes de consulta de tipo SQL.
     </p>
-    <p style="text-align:justify" >
+    <p>
       Por lo general, los investigadores académicos se refieren a este tipo de bases de datos como almacenamiento estructurado, término que abarca
       también las bases de datos relacionales clásicas. A menudo, las bases de datos NoSQL se clasifican según su forma de almacenar los datos,
       y comprenden categorías como clave-valor, las implementaciones de BigTable, bases de datos documentales, y Bases de datos orientadas a grafos.
     </p>
-    <p style="text-align:justify">
+    <p>
       Se puede decir que la aparición del término NoSQL aparece con la llegada de la web 2.0 ya que hasta ese momento  sólo  subían  contenido  a
       la  red  aquellas  empresas  que  tenían  un  portal,  pero  con  la  llegada  de aplicaciones  como Facebook,  Twitter  o  Youtube,
       cualquier  usuario  podía  subir  contenido,  provocando  así un crecimiento exponencial de los datos.
     </p>
-    <p style="text-align:justify">
+    <p>
       Es  en  este  momento  cuando  empiezan  a  aparecer  los  primeros  problemas  de  la  gestión  de  toda  esa información almacenada
       en bases  de  datos relacionales. En un principio, para solucionar estos problemas de  accesibilidad,  las  empresas  optaron  por  utilizar
       un  mayor  número  de  máquinas  pero  pronto  se  dieron cuenta de que esto no solucionaba el problema, además de ser una solución muy cara.
       La otra solución era la  creación  de  sistemas  pensados  para  un  uso  específico  que  con  el  paso  del  tiempo  han  dado  lugar  a
       soluciones robustas, apareciendo así el movimiento NoSQL.
     </p>
-    <p style="text-align:justify">
+    <p>
       Por  lo  tanto  hablar  de  bases  de  datos  NoSQL  es  hablar  de  estructuras  que  nos  permiten  almacenar
       información  en  aquellas  situaciones  en  las  que  las  bases  de  datos  relacionales generan  ciertos  problemas
       debido  principalmente  a  problemas  de  escalabilidad  y  rendimiento  de  las  bases  de  datos  relacionales
       donde se dan cita miles de usuarios concurrentes y con millones de consultas diarias.
     </p>
-    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <p id="vol-ind"><a href="#ind"><ins>Volver al Índice</ins></a></p>
     <br>
 
 
     <h2 id="t1">Antecedentes</h2>
-    <p style="text-align:justify">
+    <p>
       El termino NOSQL cobija varios productos, varios conceptos relacionados sobre almacenamiento,  gestión de datos y datos voluminosos.
       Es lo que denominan un término “umbrella” (“sombrilla”) porque cobija varias elementos.
     </p>
-    <p style="text-align:justify">
+    <p>
       Carlo Strozzi usó el término <strong>NoSQL</strong> en 1998 para referirse a su base de datos. Era una base de datos open-source,
       ligera, que no ofrecía un interface SQL, pero sí seguía el modelo relacional1 (Strozzi sugiere que,
       ya que el actual movimiento NoSQL  <cite><q>Se sale completamente del modelo relacional, debería, por tanto, haberse llamado 'NoREL', o algo así.</q></cite>)
     </p>
-    <p style="text-align:justify">
+    <p>
       Eric Evans, un empleado de Rackspace, reintrodujo el término NoSQL cuando Johan Oskarsson de Last.fm quiso organizar un evento para discutir
       bases de datos distribuidas de código abierto. El nombre intentaba recoger el número creciente de bases de datos
       no relacionales y distribuidas que no garantizaban ACID, atributo clave en las RDBMS clásicas.
     </p>
-    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <p id="vol-ind"><a href="#ind"><ins>Volver al Índice</ins></a></p>
     <br>
 
     <h2 id="t2">Arquitectura</h2>
-    <div style="text-align:justify">
-      <p>
-        Típicamente las bases de datos relacionales modernas han mostrado poca eficiencia en determinadas aplicaciones que usan los datos de forma
-        intensiva, incluyendo el indexado de un gran número de documentos, la presentación de páginas en sitios que tienen gran tráfico,
-        y en sitios de streaming audiovisual. Las implementaciones típicas de RDBMS se han afinado o bien para una cantidad pequeña pero frecuente
-        de lecturas y escrituras o para un gran conjunto de transacciones que tiene pocos accesos de escritura. Por otro lado NoSQL puede servir
-        gran cantidad de carga de lecturas y escrituras.
-      </p>
-      <p>
-        Implementaciones de NoSQL usadas en el mundo real incluyen los 3TB de los marcadores verdes de Digg (indicados para señalar las historias
-        votadas por otros en la red social; aunque duró menos de 3 meses y fue abandonado); los 6 TB de la base de datos del “ENSEMBLE”
-        de la Comisión Europea usado en los modelos de comparación y calidad del aire, y los 50 TB de la búsqueda de la bandeja de
-        entrada de Facebook.
-      </p>
-      <p>
-        Las arquitecturas NoSQL frecuentemente aportan escasas garantías de consistencia, tales como consistencia de eventos o transaccional
-        restringida a ítems únicos de datos. Algunos sistemas, sin embargo, aportan todas las garantías de los sistemas ACID en algunas
-        instancias añadiendo una capa intermedia (como por ejemplo, AppScale o CloudTPS). Hay dos sistemas que han sido desplegados y que aportan
-        aislamiento snapshot para almacenamientos de columna: El sistema Percolator de Google (basado en el sistema BigTable) y el sistema
-        transaccional de Hbase desarrollado por la universidad de Waterloo. Estos sistemas, desarrollados de forma independiente, usan conceptos
-        similares para conseguir transacciones ACID distribuidas de múltiples filas con garantías de aislamiento snapshot para el sistema
-        subyacente de almacenamiento en esa columna, sin sobrecarga extra en la gestión de los datos, despliegue en el sistema de middleware,
-        ni mantenimiento introducido por la capa de middleware.
-      </p>
-      <p>
-        Bastantes sistemas NoSQL emplean una arquitectura distribuida, manteniendo los datos de forma redundante en varios servidores, usando
-        frecuentemente una tabla hash distribuida. De esta forma, el sistema puede realmente escalar añadiendo más servidores,
-        y el fallo en un servidor puede ser tolerado.
-      </p>
-    </div>
-    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <p>
+      Típicamente las bases de datos relacionales modernas han mostrado poca eficiencia en determinadas aplicaciones que usan los datos de forma
+      intensiva, incluyendo el indexado de un gran número de documentos, la presentación de páginas en sitios que tienen gran tráfico,
+      y en sitios de streaming audiovisual. Las implementaciones típicas de RDBMS se han afinado o bien para una cantidad pequeña pero frecuente
+      de lecturas y escrituras o para un gran conjunto de transacciones que tiene pocos accesos de escritura. Por otro lado NoSQL puede servir
+      gran cantidad de carga de lecturas y escrituras.
+    </p>
+    <p>
+      Implementaciones de NoSQL usadas en el mundo real incluyen los 3TB de los marcadores verdes de Digg (indicados para señalar las historias
+      votadas por otros en la red social; aunque duró menos de 3 meses y fue abandonado); los 6 TB de la base de datos del “ENSEMBLE”
+      de la Comisión Europea usado en los modelos de comparación y calidad del aire, y los 50 TB de la búsqueda de la bandeja de
+      entrada de Facebook.
+    </p>
+    <p>
+      Las arquitecturas NoSQL frecuentemente aportan escasas garantías de consistencia, tales como consistencia de eventos o transaccional
+      restringida a ítems únicos de datos. Algunos sistemas, sin embargo, aportan todas las garantías de los sistemas ACID en algunas
+      instancias añadiendo una capa intermedia (como por ejemplo, AppScale o CloudTPS). Hay dos sistemas que han sido desplegados y que aportan
+      aislamiento snapshot para almacenamientos de columna: El sistema Percolator de Google (basado en el sistema BigTable) y el sistema
+      transaccional de Hbase desarrollado por la universidad de Waterloo. Estos sistemas, desarrollados de forma independiente, usan conceptos
+      similares para conseguir transacciones ACID distribuidas de múltiples filas con garantías de aislamiento snapshot para el sistema
+      subyacente de almacenamiento en esa columna, sin sobrecarga extra en la gestión de los datos, despliegue en el sistema de middleware,
+      ni mantenimiento introducido por la capa de middleware.
+    </p>
+    <p>
+      Bastantes sistemas NoSQL emplean una arquitectura distribuida, manteniendo los datos de forma redundante en varios servidores, usando
+      frecuentemente una tabla hash distribuida. De esta forma, el sistema puede realmente escalar añadiendo más servidores,
+      y el fallo en un servidor puede ser tolerado.
+    </p>
+    <p id="vol-ind"><a href="#ind"><ins>Volver al Índice</ins></a></p>
     <br>
 
     <h2 id="t3">Ventajas</h2>
-    <ol style="list-style-type:disc; color:blue">
+    <ol id="ventj">
       <li>Estos sistemas responden a las necesidades de escalabilidad horizontal que tienen cada vez más empresas.</li>
       <li>Pueden manejar enormes cantidades de datos.</li>
       <li>No generan cuellos de botella.</li>
@@ -169,11 +226,11 @@
       <li>Diferentes DBs NoSQL para diferentes proyectos.</li>
       <li>Se ejecutan en clusters de máquinas baratas.</li>
     </ol>
-    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <p id="vol-ind"><a href="#ind"><ins>Volver al Índice</ins></a></p>
     <br>
 
     <h2 id="t4">Desventajas</h2>
-    <ol style="list-style-type:disc; color:red">
+    <ol id="desventj">
       <li>El código abierto puede significar una "mancha" en el soporte para las empresas.</li>
       <li>No están lo suficientemente maduros para algunas empresas</li>
       <li>Limitaciones de Inteligencia de Negocios</li>
@@ -181,13 +238,13 @@
       <li>Problemas de compatibilidad</li>
 
     </ol>
-    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <p id="vol-ind"><a href="#ind"><ins>Volver al Índice</ins></a></p>
     <br>
 
     <h2 id="t5">Diferencias con bases de datos SQL</h2>
     <p>
       Algunas  de  las  diferencias  más  destacables  que  nos  podemos  encontrar  entre  los  sistemas  NoSQL  y  los sistemas SQL están:
-      <ol>
+      <ol id="difSQL">
         <li><b>No utilizan SQL como lenguaje de consultas</b> La mayoría de las bases de datos NoSQL evitan utilizar este tipo de lenguaje o
           lo utilizan como un lenguaje de apoyo. Por poner algunos ejemplos, Cassandra utiliza el lenguaje CQL, MongoDB utiliza JSON o BigTable
           hace uso de GQL.
@@ -205,19 +262,19 @@
           </li>
       </ol>
     </p>
-    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <p id="vol-ind"><a href="#ind"><ins>Volver al Índice</ins></a></p>
     <br>
 
     <h2 id="t6">Sistemas</h2>
-    <p style="text-align:justify">
+    <p>
       Dependiendo  de  la  forma  en  la  que  almacenen  la  información,  nos  podemos  encontrar  varios  tipos distintos de bases de
       datos NoSQL. Veamos los sistemas más utilizados.
     </p>
-    <ol style="list-style-type:square">
+    <ol id="sis">
       <li>
         <h3 id="t6s1">Bases de datos clave-valor</h3>
         <p>
-          <img src="bd-clavevalor.png" title="NoSQL" style="float:right" height="200px">
+          <img id="img2" src="bd-clavevalor.png" title="NoSQL" height="200px">
           Son  el  modelo  de  base  de  datos  NoSQL  más  popular,  además  de  ser  la  más  sencilla  en  cuanto  a
           funcionalidad. En este tipo de sistema, cada elemento está identificado por una llave única, lo que permite
           la recuperación de  la información de  forma muy rápida, información que  habitualmente  está almacenada
@@ -230,7 +287,7 @@
       <li>
         <h3 id="t6s2">Bases de datos documentales</h3>
         <p>
-          <img src="bd-documentales.jpg" title="NoSQL" style="float:left" height="200px">
+          <img id="img3" src="bd-documentales.jpg" title="NoSQL" height="200px">
           Este  tipo almacena la información como un documento, generalmente  utilizando para ello una estructura
           simple como JSON o XML y donde se utiliza una clave única para cada registro. Este tipo de implementación
           permite,  además  de  realizar  búsquedas  por  clave-valor,  realizar  consultas  más  avanzadas  sobre  el
@@ -244,7 +301,7 @@
       <li>
         <h3 id="t6s3">Bases de datos en Grafo</h3>
         <p>
-          <img src="bd-grafo.png" title="NoSQL" style="float:right" height="200px">
+          <img id="img4" src="bd-grafo.png" title="NoSQL" height="200px">
           En este tipo de bases de datos, la información se representa como nodos de un grafo y sus relaciones con
           las aristas del mismo, de manera que se puede hacer uso de la teoría de grafos para recorrerla. Para sacar
           el máximo rendimiento a este tipo de bases de datos, su estructura debe estar totalmente normalizada, de
@@ -257,7 +314,7 @@
       <li>
         <h3 id="t6s4">Bases de datos Orientadas a Objetos</h3>
         <p>
-          <img src="bd-oo.jpg" title="NoSQL" style="float:left" height="200px">
+          <img id="img5" src="bd-oo.jpg" title="NoSQL" height="200px">
           En una base de datos orientada a objetos, la información se representa mediante objetos como los presentes en la programación
           orientada a objetos. Cuando se integra las características de una base de datos con las de un lenguaje de programación
           orientado a objetos, el resultado es un sistema gestor de base de datos orientada a objetos (ODBMS, object database management
@@ -272,17 +329,17 @@
         </p>
       </li>
     </ol>
-    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <p id="vol-ind"><a href="#ind"><ins>Volver al Índice</ins></a></p>
     <br>
 
     <h2 id="con">Conclusión</h2>
-    <p style="text-align:justify">
+    <p>
       Al termino de esta investigacion el alumno puede comprender la historia, la estrucutura y diferencias que existen entre una base de datos relaciona y una <strong>NO</strong>
       relacional, y tiene la capacidad de elegir el tipo de sistema a utilizar cuando maneje datos.
       Ademas debe conocer si no es que todos, la mayoria de las estructuras, etiquetas, comandos, estilos, atributos y propiedades  de HTML que
       se han visto a lo largo del curso.
     </p>
-    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <p id="vol-ind"><a href="#ind"><ins>Volver al Índice</ins></a></p>
     <br>
 
     <h2 id="ref">Referencias</h2>
@@ -290,7 +347,7 @@
       1.Wikipedia.  Fundación Wikimedia, Inc., <em>"NoSQL"</em> 29 de Junio del 2015 <a href="https://es.wikipedia.org/wiki/NoSQL">https://es.wikipedia.org/wiki/NoSQL</a>
     </p>
     <p>
-      2. William Díaz Sepúlveda.  Bases de datos NOSQL ,<em>"BASES DE DATOS NOSQL: LLEGARON PARA QUEDARSE"</em> 27 de Mayo del 2013 <a href="http://basesdedatosnosql.blogspot.mx">http://basesdedatosnosql.blogspot.mx</a>
+      2.William Díaz Sepúlveda.  Bases de datos NOSQL ,<em>"BASES DE DATOS NOSQL: LLEGARON PARA QUEDARSE"</em> 27 de Mayo del 2013 <a href="http://basesdedatosnosql.blogspot.mx">http://basesdedatosnosql.blogspot.mx</a>
     </p>
     <p>
       3.Hugo González. Academia de Tecnologías de la Información y Telemática, <em>"Bases de datos NoSQL"</em> 17 de Noviembre del 2011<a href="http://atit.upslp.edu.mx/~hugo/presentaciones/2011--noSQL--SemanaUPSLP.pdf">http://atit.upslp.edu.mx/~hugo/presentaciones/2011--noSQL--SemanaUPSLP.pdf</a>
@@ -298,7 +355,7 @@
     <p>
       4.LinuxParty.  LinuxParty Team, <em>"5 Pros y 5 contras de cinco bases de datos NoSQL "</em> 109 de Enero del 2011 <a href="http://www.linux-party.com/index.php/89-basesdedatos/6599-5-pros-y-5-contras-de-cinco-bases-de-datos-nosql-">http://www.linux-party.com/index.php/89-basesdedatos/6599-5-pros-y-5-contras-de-cinco-bases-de-datos-nosql-</a>
     </p>
-    <p style="text-align:right"><a href="#ind"><ins>Volver al Índice</ins></a></p>
+    <p id="vol-ind"><a href="#ind"><ins>Volver al Índice</ins></a></p>
     <br>
     <br>
   </body>
