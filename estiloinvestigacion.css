@@ -1,0 +1,55 @@
+table, img#NSQL{
+  width: 100%;
+  text-align: center;
+  vertical-align: baseline;
+}
+p#uach{
+  font-size: xx-large;
+  text-align: center;
+  font-weight: bold;
+}
+p#fing{
+  font-size: xx-large;
+  font-family: arial;
+  text-align: center;
+}
+div#portada{
+  text-align: center;
+  padding:10px;
+}
+
+ol#ind{
+  list-style-type:disc;
+  font-size:large;
+}
+ol#subind{
+  list-style-type: circle;
+  font-size:large;
+}
+p{
+  text-align: justify;
+}
+p#vol-ind{
+  text-align: right;
+}
+ol#ventj{
+  list-style-type:disc;
+  color:blue;
+}
+ol#desventj{
+  list-style-type:disc;
+  color:red;
+}
+ol#difSQL{
+  text-align: justify;
+  list-style: square;
+}
+ol#sis{
+  list-style-type:square;
+}
+img#img1, img#img2, img#img4 {
+  float: right;
+}
+img#img3, img#img5{
+  float: left;
+}
